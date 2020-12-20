@@ -25,6 +25,21 @@ public class TernaryDemo {
 			System.out.println(j +"is even");
 		else
 			System.out.println("Both "+i+" and "+j+" are not even");
+		
+		Object obj1, obj2;
+		obj1 = true? 1: "5";
+		obj2 = true? 1: 5.0;
+		System.out.println("Object 1: "+obj1); // 1
+		System.out.println("Object 2: "+obj2); // 1.0 -because it check
+		/**
+		 * Ternary operator
+		 * checks types also
+		 * with same level i.e. All classes extending Number class(Integer and Float) but not with Integer and String
+		 * and converts output to type of max size variable(Double here in case of obj2)
+		 */
+
+		System.out.println(obj1.getClass().getTypeName()); // java.lang.Integer
+		System.out.println(obj2.getClass().getTypeName()); // java.lang.Double
 	}
 
 }
