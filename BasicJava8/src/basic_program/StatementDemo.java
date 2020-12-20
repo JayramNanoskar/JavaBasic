@@ -18,6 +18,18 @@ public class StatementDemo {
 			}
 		}
 		
+		
+		if(System.out.printf("Hi") == System.out.printf("Welcome")) {System.out.println(" Printing ");} // HiWelcome Printing- Here printf return PrintStream. Thus PrintStream == PrintStream satisfies if condition
+		
+		if(System.out.printf(getString()) == System.out.printf(getAnotherString())) {System.out.println(" Printing ");} // firstsecond Printing
+		
+		/**
+		 * Print without using semicolon
+		 */
+		if(System.out.printf("Hello") != null) {}
+					
 	}
 	
+		static String getString() {return "first";};
+		static String getAnotherString() {return "second";};
 }
