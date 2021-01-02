@@ -30,6 +30,8 @@ public class AbstractionDemoInterface implements MyShow {
 		else {
 			System.out.println("No permission");
 		}
+		
+		MyInterface.drink(); //Drinking...//Calling interface static method directly with name(like class)
 	}
 
 	public void show() {
@@ -53,8 +55,15 @@ interface MyShow{
 	void show();
 }
 
+/**
+ * SAM(Single Abstract Method) interface/ Functional interface
+ * Has only one abstract(unimplemented) method and can have any number of(0-N) static, default methods
+ */
 interface MyInterface{
 	void print();
+	static void drink() {
+		System.out.println("Drinking...");
+	}
 }
 
 /**
