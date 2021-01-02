@@ -23,6 +23,13 @@ public class AbstractionDemoInterface implements MyShow {
 			
 		};
 		myinterface.print(); //Printing...
+		MarkerDemo md = new MarkerDemo();
+		if(md instanceof MyMarkerInterface) {
+			md.log();
+		}
+		else {
+			System.out.println("No permission");
+		}
 	}
 
 	public void show() {
@@ -36,6 +43,12 @@ public class AbstractionDemoInterface implements MyShow {
 	};
 }
 
+class MarkerDemo implements MyMarkerInterface{
+	void log() {
+		System.out.println("Logging...");
+	}
+}
+
 interface MyShow{
 	void show();
 }
@@ -44,3 +57,9 @@ interface MyInterface{
 	void print();
 }
 
+/**
+ * Marker interface- Used for checking/validating purpose
+ * Empty interface without any method definition or declaration
+ */
+interface MyMarkerInterface{
+}
