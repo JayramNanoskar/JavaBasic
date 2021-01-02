@@ -17,10 +17,10 @@ public class AbstractionDemoInterface implements MyShow {
 		AbstractionDemoInterface abi = new AbstractionDemoInterface();
 		abi.show();
 		abi.myinterface.print(); //Printing...
-		MyInterface myinterface = new MyInterface() { //Using Anonymous Inner Class so no need to have another class to just implement method.
-			public void print() {
+		MyInterface myinterface = () -> //Using Lambda expression(Introduced since JDK 1.8) for memory management.
+		{	
 				System.out.println("Printing...");
-			}
+			
 		};
 		myinterface.print(); //Printing...
 	}
