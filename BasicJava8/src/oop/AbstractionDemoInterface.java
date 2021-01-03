@@ -32,6 +32,7 @@ public class AbstractionDemoInterface implements MyShow {
 		}
 		
 		MyInterface.drink(); //Drinking...//Calling interface static method directly with name(like class)
+		md.eat(); //Eating...//Calling interface default method with object name of implementing(interface) class
 	}
 
 	public void show() {
@@ -45,9 +46,13 @@ public class AbstractionDemoInterface implements MyShow {
 	};
 }
 
-class MarkerDemo implements MyMarkerInterface{
+class MarkerDemo implements MyMarkerInterface, MyInterface{
 	void log() {
 		System.out.println("Logging...");
+	}
+
+	public void print() {
+		
 	}
 }
 
@@ -61,8 +66,16 @@ interface MyShow{
  */
 interface MyInterface{
 	void print();
+	/**
+	 * Using default & static method we can modify interface even after they get published/used
+	 * So previous implementation won't get change.
+	 */
 	static void drink() {
 		System.out.println("Drinking...");
+	}
+	
+	default void eat() {
+		System.out.println("Eating...");
 	}
 }
 
