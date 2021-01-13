@@ -16,7 +16,7 @@ public class QRCodeDemo {
 	}
 
 	public static void createQR(String data, String path) throws IOException{
-		ByteArrayOutputStream out = QRCode.from(data).to(ImageType.JPG).stream(); //Creating QRCode in string format
+		ByteArrayOutputStream out = QRCode.from(data).to(ImageType.JPG).stream(); //Creating QRCode in stream format
 		
 		File f = new File(path); //File to write QRCode
 		FileOutputStream fos = new FileOutputStream(f);
