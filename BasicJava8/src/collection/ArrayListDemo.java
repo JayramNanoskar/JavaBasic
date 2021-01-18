@@ -2,6 +2,7 @@ package collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 /**
  * List interface extends Collection interface and has an extra features than Collection interface.
@@ -29,6 +30,25 @@ public class ArrayListDemo {
 		
 		//iterating ArrayList using for_each loop
 		values.forEach(i -> System.out.println(i)); //Iterating using for_each with lambda expression(same as Arrow function in JS)
+		
+		
+		/**
+		 * LinkedList does not allocate memory to the items before the items are added to the list.
+		 * So LinkedList does not have 'capacity'.
+		 */
+		LinkedList<String> llst = new LinkedList<>();
+		llst.add("A");
+		llst.add("B");
+		llst.add("C");
+		llst.add("D");
+		llst.add("E");
+		
+		System.out.println(llst); //[A, B, C, D, E]
+		llst.remove(3);
+		llst.addFirst("Z");
+		llst.add(3, "x");
+		System.out.println(llst); //[Z, A, B, x, C, E]
+		System.out.println(llst.size()); //6
 	}
 
 	/**
